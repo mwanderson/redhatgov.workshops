@@ -232,6 +232,12 @@
       username: "{{ local_user }}"
       workshop_prefix: "{{ workshop_prefix }}"
       rhel: "at-{{ workshop_prefix }}"
+      # RH IT Required Tags
+      ServiceName: "at-{{ workshop_prefix }}-admin"
+      ServiceOwner: "{{ local_user }}"
+      ServicePhase: "{{ workshop_phase }}"
+      BusinessUnit: "415"
+      AppCode: "{{ workshop_appCode }}"
     exact_count: "{{ rhel_count }}"
     count_tag: rhel
   register: ec2_rhel
@@ -277,6 +283,12 @@
       username: "{{ local_user }}"
       workshop_prefix: "{{ workshop_prefix }}"
       tower_rhel: "at-{{ workshop_prefix }}"
+      # RH IT Required Tags
+      ServiceName: "at-{{ workshop_prefix }}-admin"
+      ServiceOwner: "{{ local_user }}"
+      ServicePhase: "{{ workshop_phase }}"
+      BusinessUnit: "415"
+      AppCode: "{{ workshop_appCode }}"
     exact_count: "{{ tower_rhel_count }}"
     count_tag: tower_rhel
   register: ec2_tower_rhel
@@ -304,6 +316,12 @@
       username: "{{ local_user }}"
       workshop_prefix: "{{ workshop_prefix }}"
       win: "at-{{ workshop_prefix }}"
+      # RH IT Required Tags
+      ServiceName: "at-{{ workshop_prefix }}-admin"
+      ServiceOwner: "{{ local_user }}"
+      ServicePhase: "{{ workshop_phase }}"
+      BusinessUnit: "415"
+      AppCode: "{{ workshop_appCode }}"
     exact_count: "{{ win_count }}"
     count_tag: win
   register: ec2_win
