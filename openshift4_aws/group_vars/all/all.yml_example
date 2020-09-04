@@ -3,6 +3,9 @@
 
 # Valid values are 'local', and 'automation' # 'automation' is intended for automated builds/deploys
 openshift_installer_type:               local
+local_user:                             "{{ ansible_env.USERNAME | default( ansible_env.USER ) }}"
+workshop_phase:                         "prod" # Can be "dev", "test", or "prod"
+workshop_appCode:                       "????" # Waiting for code creation
 
 # get installation files playbook variables
 openshift_version:                      4.4.17
