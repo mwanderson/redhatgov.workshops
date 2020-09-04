@@ -215,6 +215,12 @@
       username: "{{ local_user }}"
       workshop_prefix: "{{ workshop_prefix }}"
       rhel: "sep-{{ workshop_prefix }}"
+      # RH IT Required Tags
+      ServiceName: "at-{{ workshop_prefix }}-admin"
+      ServiceOwner: "{{ local_user }}"
+      ServicePhase: "{{ workshop_phase }}"
+      BusinessUnit: "415"
+      AppCode: "{{ workshop_appCode }}"
     exact_count: "{{ rhel_count }}"
     count_tag: rhel
   register: ec2_rhel
@@ -238,6 +244,12 @@
       username: "{{ local_user }}"
       workshop_prefix: "{{ workshop_prefix }}"
       win: "sep-{{ workshop_prefix }}"
+      # RH IT Required Tags
+      ServiceName: "at-{{ workshop_prefix }}-admin"
+      ServiceOwner: "{{ local_user }}"
+      ServicePhase: "{{ workshop_phase }}"
+      BusinessUnit: "415"
+      AppCode: "{{ workshop_appCode }}"
     exact_count: "{{ win_count }}"
     count_tag: win
   register: ec2_win
