@@ -27,6 +27,12 @@ networking:
 platform:
   aws:
     region: {{ aws_region }}
+    userTags:
+      ServiceName: 'ocp-{{ openshift_cluster_name }}-admin'
+      ServiceOwner: {{ local_user }}
+      ServicePhase: {{ workshop_phase }}
+      BusinessUnit: '415'
+      AppCode: '????'
 pullSecret: '{{ openshift_install_pull_secret | regex_replace( '^ ', '' ) }}'
 fips: false
 sshKey: {{ openshift_node_ssh_public_key }}
